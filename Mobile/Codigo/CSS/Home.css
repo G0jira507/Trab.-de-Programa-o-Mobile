@@ -1,0 +1,105 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #2E2EFF, #000000); 
+  min-height: 100vh;
+  color: white;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.logo {
+  display: flex;       
+  align-items: center;   
+  gap: 10px;              
+}
+
+.logo img {
+  height: 50px;    
+}
+
+.logo p {
+  font-size: 24px;       
+  font-weight: bold;      
+  margin: 0;              
+  position: relative;
+  top: 6px;
+}
+
+nav {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+nav a {
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.icons span {
+  margin-left: 15px;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 120px 60px 80px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.text-content {
+  max-width: 450px;
+}
+
+.text-content h1 {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.text-content .subtitle {
+  font-size: 1em;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 12px 30px;
+  border: 2px solid white;
+  border-radius: 30px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.cta-button span {
+  margin-left: 10px;
+}
+
+.cta-button:hover {
+  background-color: white;
+  color: #10319a;
+}
+
+.image-placeholder img {
+  width: 500px;
+  border-radius: 0;
+}
