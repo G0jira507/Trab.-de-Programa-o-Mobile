@@ -69,7 +69,20 @@ nav a {
   padding: 120px 60px 80px;
   min-height: 100vh;
   box-sizing: border-box;
+
+  /* Fundo animado */
+  background: linear-gradient(-45deg, #2E2EFF, #1a2a8a, #000000, #1a2a8a);
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+  color: white;
 }
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 
 .text-content {
   max-width: 450px;

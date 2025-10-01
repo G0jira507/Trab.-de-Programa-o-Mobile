@@ -48,17 +48,18 @@ nav a {
 }
 
 .icons {
-  display: flex;          /* Deixa os links em linha */
-  gap: 25px;              /* Espaçamento entre os ícones */
-  align-items: center;    /* Alinha verticalmente, se necessário */
+  display: flex;          
+  gap: 25px;              
+  align-items: center;    
 }
 
 .icons img {
-  width: 24px;           /* Largura dos ícones */
-  height: 24px;          /* Altura dos ícones */
+  width: 24px;           
+  height: 24px;          
 }
 
 .hero {
+  position: relative;
   display: flex;
   justify-content: center;  
   align-items: center;
@@ -67,6 +68,58 @@ nav a {
   background: linear-gradient(to bottom, #2E2EFF, #000000);
   color: white;
   min-height: 50vh;         
+  overflow: hidden; 
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background: #ffffff;
+  clip-path: polygon(
+    0 60%, 20% 65%, 40% 55%, 60% 65%, 80% 60%, 100% 65%, 
+    100% 100%, 0 100%
+  );
+  animation: waveMove 6s ease-in-out infinite alternate;
+}
+
+@keyframes waveMove {
+  0% {
+    clip-path: polygon(
+      0 60%, 20% 65%, 40% 55%, 60% 65%, 80% 60%, 100% 65%, 
+      100% 100%, 0 100%
+    );
+  }
+  50% {
+    clip-path: polygon(
+      0 55%, 20% 60%, 40% 65%, 60% 60%, 80% 65%, 100% 55%, 
+      100% 100%, 0 100%
+    );
+  }
+  100% {
+    clip-path: polygon(
+      0 60%, 20% 65%, 40% 55%, 60% 65%, 80% 60%, 100% 65%, 
+      100% 100%, 0 100%
+    );
+  }
+}
+
+.wave-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.wave-svg {
+  width: 100%;
+  height: 120px;
+  display: block;
 }
 
 .text-content {
@@ -111,4 +164,71 @@ nav a {
   max-width: 800px;    
   margin: 0 auto;      
 }
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  padding: 60px 40px;
+}
+
+/* Estrutura geral */
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.card img {
+  width: 50%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Retângulo azul */
+.card .text {
+  background-color: #1a2a8a;
+  color: white;
+  padding: 30px 40px;
+  border-radius: 8px;
+  max-width: 40%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  position: absolute;
+}
+
+/* 1º e 3º card → retângulo à esquerda, imagem à direita */
+.card:nth-child(1) img,
+.card:nth-child(3) img {
+  margin-left: auto; /* empurra imagem para direita */
+}
+
+.card:nth-child(1) .text,
+.card:nth-child(3) .text {
+  left: 5%; /* retângulo encostado à esquerda */
+}
+
+/* 2º card → imagem à esquerda, retângulo à direita */
+.card:nth-child(2) img {
+  margin-right: auto; /* empurra imagem para esquerda */
+}
+
+.card:nth-child(2) .text {
+  right: 5%; /* retângulo encostado à direita */
+}
+
+/* Títulos e textos */
+.card .text h3 {
+  font-size: 1.6em;
+  margin-bottom: 12px;
+}
+
+.card .text p {
+  font-size: 1em;
+  line-height: 1.6;
+}
+
+
+
+
 
