@@ -1,0 +1,127 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #2E2EFF, #000000); 
+  min-height: 100vh;
+  color: white;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 61px;
+  z-index: 100;
+  border-bottom: 6px solid black;
+}
+
+.logo {
+  display: flex;       
+  align-items: center;   
+  gap: 10px;              
+}
+
+.logo img {
+  height: 50px;    
+}
+
+.logo p {
+  font-size: 24px;       
+  font-weight: bold;      
+  margin: 0;              
+  position: relative;
+  top: 6px;
+  color: #000000;
+}
+
+nav {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+nav a {
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.icons {
+  display: flex;          /* Deixa os links em linha */
+  gap: 25px;              /* Espaçamento entre os ícones */
+  align-items: center;    /* Alinha verticalmente, se necessário */
+}
+
+.icons img {
+  width: 24px;           /* Largura dos ícones */
+  height: 24px;          /* Altura dos ícones */
+}
+
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 120px 60px 80px;
+  min-height: 100vh;
+  box-sizing: border-box;
+
+  /* Fundo animado */
+  background: linear-gradient(-45deg, #2E2EFF, #1a2a8a, #000000, #1a2a8a);
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+  color: white;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+.text-content {
+  max-width: 450px;
+}
+
+.text-content h1 {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.text-content .subtitle {
+  font-size: 1em;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 12px 30px;
+  border: 2px solid white;
+  border-radius: 30px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.cta-button span {
+  margin-left: 10px;
+}
+
+.cta-button:hover {
+  background-color: white;
+  color: #10319a;
+}
+
+.image-placeholder img {
+  width: 500px;
+  border-radius: 0;
+}
