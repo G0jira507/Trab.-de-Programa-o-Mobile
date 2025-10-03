@@ -1,7 +1,6 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #2E2EFF, #000000); 
     min-height: 100vh;
     color: white;
   }
@@ -17,6 +16,7 @@ body {
     width: 100%;
     height: 61px;
     z-index: 100;
+    border-bottom: 6px solid black;
   }
   
   .logo {
@@ -60,3 +60,67 @@ body {
     width: 24px;           /* Largura dos ícones */
     height: 24px;          /* Altura dos ícones */
   }
+
+.hero-slider {
+  position: relative;
+  overflow: hidden;
+  min-height: 35vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, #2E2EFF, #000000);
+  color: white;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 300%; /* 3 slides */
+}
+
+.slide {
+  position: relative;
+  min-width: 100%;
+  display: flex;
+  justify-content: center; /* pode ajustar depois */
+  align-items: center;     /* pode ajustar depois */
+  overflow: hidden;
+}
+
+.slide-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;    /* mantém proporção */
+  height: 100%;   /* ocupa toda a altura do slide */
+  max-width: none; /* evita restrição de largura */
+  z-index: 1;
+}
+
+
+.text-content {
+  position: relative;
+  z-index: 2;          /* garante que o texto fique acima da imagem */
+  text-align: center;
+  color: white;
+}
+
+/* Botões de navegação */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.4);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 2em;
+  border-radius: 50%;
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+
+

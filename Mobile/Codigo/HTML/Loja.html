@@ -13,7 +13,7 @@
           <p>OPENBUILD</p>
         </div>
         <nav>
-          <a href="Loja.html">Loja</a>
+          <a href="Home.html">Home</a>
           <a href="Sobre nós.html">Sobre nós</a>
           <div class="icons">
             <a href="">
@@ -29,6 +29,60 @@
           </div>
         </nav>
       </header>
+
+  <main>
+<section class="hero-slider">
+  <div class="slides">
+    <div class="slide active">
+      <div class="text-content">
+        <h1></h1>
+      </div>
+      <img src="../../imagens/Loja/celular.png" alt="" class="slide-image">
+    </div>
+    <div class="slide">
+      <div class="text-content">
+        <h1>bbbb</h1>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="text-content">
+        <h1>cccc</h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- Botões de navegação -->
+  <button class="prev">&#10094;</button>
+  <button class="next">&#10095;</button>
+</section>
+
+<script>
+const slides = document.querySelectorAll(".slide");
+const prev = document.querySelector(".prev");
+const next = document.querySelector(".next");
+
+let currentIndex = 0;
+
+function showSlide(index) {
+  const slidesContainer = document.querySelector(".slides");
+  if(index >= slides.length) currentIndex = 0;
+  else if(index < 0) currentIndex = slides.length - 1;
+  else currentIndex = index;
+
+  slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+next.addEventListener("click", () => showSlide(currentIndex + 1));
+prev.addEventListener("click", () => showSlide(currentIndex - 1));
+
+
+</script>
+
+
+
+
+    <section class="sla"></section>
+  </main>    
     
 </body>
 </html>
